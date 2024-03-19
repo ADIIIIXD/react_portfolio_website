@@ -47,17 +47,18 @@ const Navbar = () => {
 
       <ul
         className={`${
-          mobNav ? "flex flex-col" : "hidden"
-        } md:hidden w-full h-screen flex flex-col justify-center items-center absolute top-0 left-0 bg-[#0a192f] text-white transition-all duration-500`}
+          mobNav ? "flex flex-col items-center gap-6" : "hidden"
+        }  md:hidden w-full h-screen flex flex-col justify-center items-center absolute top-0 left-0 bg-zinc-500 text-white transition-all duration-500`}
       >
         {["HOME", "ABOUT", "SKILLS", "WORK", "CONTACT"].map((item, index) => {
           return (
             <li key={index}>
               <Link
-                to={item.toLowerCase()} // Using lowercase version of the names
+                to={item.toLowerCase()}
                 smooth={true}
                 duration={500}
-                className="py-6 text-4xl font-semibold cursor-pointer font-futura hover:text-[#969696]"
+                className="py-6 text-4xl font-semibold cursor-pointer font-futura hover:text-pink-600"
+                onClick={() => setMobNav(false)}
               >
                 {item}
               </Link>
